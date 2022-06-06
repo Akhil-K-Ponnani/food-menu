@@ -43,6 +43,13 @@ export default {
     updateUser: (userId, userName) => {
         return new Promise((resolve, reject) => {
             userModel.findByIdAndUpdate(userId, { name: userName }, { new: true }).then((user) => {
+                user = {
+                    _id: user._id,
+                    name: user.name,
+                    email: user.email,
+                    type: user.type,
+                    token: generateToken(user._id)
+                }
                 resolve(user)
             })
         })

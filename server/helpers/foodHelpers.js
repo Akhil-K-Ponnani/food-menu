@@ -7,12 +7,6 @@ export default {
             resolve(foods)
         })
     },
-    getFoodDetails: (foodId) => {
-        return new Promise(async (resolve, reject) => {
-            let food = await foodModel.findById(foodId)
-            resolve(food)
-        })
-    },
     addFood: (foodData) => {
         return new Promise((resolve, reject) => {
             foodModel.create(foodData).then((food) =>

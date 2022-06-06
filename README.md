@@ -1,6 +1,6 @@
 # Food Menu
 ***
-Food Menu is a realtime MERN Stack Application.
+Food Menu is a MERN Stack Application.
 
 ## Technologies Used
 ***
@@ -8,6 +8,7 @@ Food Menu is a realtime MERN Stack Application.
 * Express
 * React
 * MongoDB
+* Bootstrap
 
 ## Installation
 ***

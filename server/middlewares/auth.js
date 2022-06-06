@@ -8,7 +8,7 @@ export default {
         if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
             let token = req.headers.authorization.split(" ")[1]
             try {
-                let decodedToken = jwt.verify(token, process.env.JWT_SECRET)
+                let decodedToken = jwt.verify(token, process.env.JWT_SECRET || "food-menu")
                 let user = await userModel.findById(decodedToken.id).select("-password")
                 req.user = user
                 next()

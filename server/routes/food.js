@@ -8,15 +8,6 @@ router.get("/", async (req, res) => {
     res.status(200).json(foods)
 })
 
-router.get("/view-food/:id", async (req, res) => {
-    if (req.params.id) {
-        let food = await foodHelpers.getFoodDetails(req.params.id)
-        res.status(200).json(food)
-    }
-    else
-        res.status(400).json({ message: "The id of food not Found." })
-})
-
 router.post("/add-food", auth.userAuth, (req, res) => {
     if (req.user.type === "admin") {
         if (req.body.name && req.body.category && req.body.price) {
