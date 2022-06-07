@@ -17,18 +17,15 @@ function Header() {
                </button>
                <div className="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                     {!user ? <div>
-                        <li className="nav-item">
-                           <Link to="/login" className="nav-link" aria-current="page">Login</Link>
-                        </li></div>
-                        : <div>
-                           <li className="nav-item">
-                              <div className="nav-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#user-profile">Profile</div>
-                           </li>
-                           <li className="nav-item">
-                              <div className="nav-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#logout-user">Logout</div>
-                           </li>
-                        </div>}
+                     {!user ? <li className="nav-item">
+                        <Link to="/login" className="nav-link" aria-current="page">Login</Link>
+                     </li>
+                        : <li className="nav-item">
+                           <div className="nav-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#user-profile" style={{ cursor: "pointer" }}>Profile</div>
+                        </li>}
+                     {user && <li className="nav-item">
+                        <div className="nav-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#logout-user" style={{ cursor: "pointer" }}>Logout</div>
+                     </li>}
                   </ul>
                </div>
             </div>

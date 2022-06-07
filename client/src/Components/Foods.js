@@ -32,7 +32,7 @@ function Foods() {
                <tbody>
                   {foods.map((food, index) =>
                      <tr key={index}>
-                        <th scope="row" style={{ textAlign: "center" }}>{index}</th>
+                        <th scope="row" style={{ textAlign: "center" }}>{index + 1}</th>
                         <td style={{ textAlign: "center" }}>{food.name}</td>
                         <td style={{ textAlign: "center" }}>{food.category}</td>
                         <td style={{ textAlign: "center" }}>₹{food.price}</td>
